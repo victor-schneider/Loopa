@@ -24,11 +24,20 @@ function doPost(e) {
     values.push([JSONSource,
                  timestamp,
                  leadData[i].job_title,
-                 leadData[i].state
+                 leadData[i].state,
                  leadData[i].first_conversion.content.identificador,
                  leadData[i].first_conversion.conversion_origin.source,
                  leadData[i].first_conversion.conversion_origin.medium]);
   }
+
+  // Atualiza a planilha com a nova linha  
+  sheet.getRange(sheet.getLastRow()+1, 1, values.length, values[0].length).setValues(values);
+  SpreadsheetApp.flush();
+  
+  // Desativa a trava do script para que possa receber outras mensagens do webhook
+  trava.releaseLock();
+  return "OK";
+}
 
 function doGet(request) {
   return HtmlService.createHtmlOutput("<h2>Get request recebida.</h2><p>Essa função te ajuda a identificar se o Web App da integração está ativo.</p>");
