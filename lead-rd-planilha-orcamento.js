@@ -4,7 +4,7 @@ function doPost(e) {
   var spreadsheet = SpreadsheetApp.openById('SEU CÓDIGO DA PLANILHA AQUI');
   // O identificar da planilha está em sua URL
   // Para mais informações acesse: https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#openbyidid
-  var sheet = spreadsheet.getSheetByName('oportunidade');
+  var sheet = spreadsheet.getSheetByName('NOME DA PÁGINA AQUI');
   
   // Acessa os dados enviados pelo webhook do RD Station   
   var requestData = JSON.parse(e.postData.contents);
