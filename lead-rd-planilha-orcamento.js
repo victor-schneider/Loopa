@@ -1,7 +1,7 @@
 // Função que recebe os dados do webhook do RD Station e insere dados na planilha
 function doPost(e) {
   // Acessa planilha e aba para inserir dados
-  var spreadsheet = SpreadsheetApp.openById('1baHWTFXPEhZAX_9kNbmuFTYx0a2F7cJAwanmoALfPA8');
+  var spreadsheet = SpreadsheetApp.openById('SEU CÓDIGO DA PLANILHA AQUI');
   // O identificar da planilha está em sua URL
   // Para mais informações acesse: https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#openbyidid
   var sheet = spreadsheet.getSheetByName('oportunidade');
