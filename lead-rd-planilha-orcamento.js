@@ -4,7 +4,7 @@ function doPost(e) {
   var spreadsheet = SpreadsheetApp.openById('1baHWTFXPEhZAX_9kNbmuFTYx0a2F7cJAwanmoALfPA8');
   // O identificar da planilha está em sua URL
   // Para mais informações acesse: https://developers.google.com/apps-script/reference/spreadsheet/spreadsheet-app#openbyidid
-  var sheet = spreadsheet.getSheetByName('lead');
+  var sheet = spreadsheet.getSheetByName('oportunidade');
   
   // Acessa os dados enviados pelo webhook do RD Station   
   var requestData = JSON.parse(e.postData.contents);
@@ -27,7 +27,10 @@ function doPost(e) {
                  leadData[i].state,
                  leadData[i].first_conversion.content.identificador,
                  leadData[i].first_conversion.conversion_origin.source,
-                 leadData[i].first_conversion.conversion_origin.medium]);
+                 leadData[i].first_conversion.conversion_origin.medium,
+                 leadData[i].last_conversion.content.identificador,
+                 leadData[i].last_conversion.conversion_origin.source,
+                 leadData[i].last_conversion.conversion_origin.medium,]);
   }
 
   // Atualiza a planilha com a nova linha  
