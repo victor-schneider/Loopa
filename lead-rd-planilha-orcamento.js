@@ -42,7 +42,7 @@ function doPost(e) {
 
 // Função para verificar se um lead já existe com o mesmo UUID no mês corrente
 function leadJaExisteComUUID(uuid, timestamp) {
-  var sheet = SpreadsheetApp.openById('1baHWTFXPEhZAX_9kNbmuFTYx0a2F7cJAwanmoALfPA8').getSheetByName('lead');
+  var sheet = SpreadsheetApp.openById('1baHWTFXPEhZAX_9kNbmuFTYx0a2F7cJAwanmoALfPA8').getSheetByName('INSIRA O NOME DA ABA AQUI');
   var dataRange = sheet.getDataRange();
   var data = dataRange.getValues();
   
